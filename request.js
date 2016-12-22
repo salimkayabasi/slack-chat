@@ -1,11 +1,15 @@
-var request = require('request');
-var baseUrl = 'https://slack.com/api/';
+const _ = require('lodash');
+const request = require('request');
 
-module.exports = function (method, options, token, channel, username, cb) {
-  options.token = token;
-  options.channel = options.channel || channel || '#general';
-  options.username = options.username || username;
-  request({ url: baseUrl + method, qs: options }, function (err, response, body) {
+const baseUrl = 'https://slack.com/api/';
+
+module.exports = (method, options, token, channel, username, cb) => {
+  const qs = _.extends(_.clone(options), {
+    token,
+    channel: options.channel || channel || '#general',
+    username: options.username || username
+  });
+  request({ url: baseUrl + method, qs }, (err, response, body) => {
     if (cb) {
       cb(err, response, body);
     }

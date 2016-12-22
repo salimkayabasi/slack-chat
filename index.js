@@ -1,18 +1,18 @@
-var slackRequest = require('./request');
-var methodPrefix = 'chat';
+const slackRequest = require('./request');
 
-var slackConfig;
+const methodPrefix = 'chat';
 
-exports.setParameters = function(slackConfig_) {
-  slackConfig = slackConfig_;
+let config;
+
+exports.setParameters = (opts) => {
+  config = opts;
 };
 
-exports.postMessage = function (text, cb) {
-  slackRequest(methodPrefix + '.postMessage',
-    slackConfig.token,
-    slackConfig.channel,
-    slackConfig.username,
-  {
-    text: text
-  }, cb);
+exports.postMessage = (text, cb) => {
+  slackRequest(`${methodPrefix}.postMessage`,
+    config.token,
+    config.channel,
+    config.username,
+    { text },
+    cb);
 };
