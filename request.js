@@ -3,7 +3,7 @@ const request = require('request');
 
 const baseUrl = 'https://slack.com/api/';
 
-module.exports = (method, options, token, channel, username, cb) => {
+module.exports = (method, token, channel, username, options, cb) => {
   const qs = _.extend(_.clone(options), {
     token,
     channel: options.channel || channel || '#general',
