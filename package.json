@@ -4,8 +4,13 @@
   "description": "Basic slack chat bot implementation",
   "main": "index.js",
   "scripts": {
-    "test": "npm run-script lint",
-    "lint": "node_modules/.bin/eslint ."
+    "major": "npm version major -m \"New major version %s\"",
+    "minor": "npm version minor -m \"New minor version %s\"",
+    "patch": "npm version patch -m \"New patch version %s\"",
+    "lint": "./node_modules/.bin/eslint .",
+    "mocha-test": "./node_modules/.bin/mocha --recursive",
+    "test": "npm run lint",
+    "main": "index.js"
   },
   "repository": {
     "type": "git",
