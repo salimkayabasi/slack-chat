@@ -6,6 +6,8 @@
 
 # slack-chat
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/salimkayabasi/slack-chat.svg)](https://greenkeeper.io/)
+
 Basic slack chat bot implementation
 
 ```$bash
