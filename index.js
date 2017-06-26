@@ -1,18 +1,3 @@
-const slackRequest = require('./request');
-
-const methodPrefix = 'chat';
-
-let config;
-
-exports.setParameters = (opts) => {
-  config = opts;
-};
-
-exports.postMessage = (text, cb) => {
-  slackRequest(`${methodPrefix}.postMessage`,
-    config.token,
-    config.channel,
-    config.username,
-    { text },
-    cb);
-};
+// This is not the main file in the npm package, but here so we can use github
+// tarballs as packages when necessary.
+module.exports = require('./dist/');
