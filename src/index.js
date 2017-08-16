@@ -1,4 +1,4 @@
-import request from 'request-promise-native';
+const phin = require('util').promisify(require('phin'));
 
 const baseUrl = 'https://slack.com/api';
 
@@ -8,18 +8,21 @@ class SlackChat {
   }
 
   async makeRequest(method, options) {
-    const qs = {
+    const data = {
       ...options,
       token: this.options.token,
       channel: options.channel || this.options.channel || '#general',
       username: options.username || this.options.username,
     };
     try {
-      const response = await request({
+      const response = await phin({
         url: baseUrl + method,
-        qs,
+        data,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
       });
-      return JSON.parse(response);
+      return JSON.parse(response.body);
     } catch (e) {
       return e;
     }
