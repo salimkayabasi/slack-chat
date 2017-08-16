@@ -11,6 +11,8 @@
     "lint:fix": "eslint . --fix",
     "pretest": "yarn run lint",
     "test": "jest",
+    "clean": "rm -rf dist/",
+    "prebuild": "yarn run test",
     "build": "babel src/ -d dist/",
     "preversion": "yarn build && git commit -a --allow-empty -m 'update dist'"
   },
