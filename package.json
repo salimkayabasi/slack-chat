@@ -27,8 +27,7 @@
   },
   "homepage": "https://github.com/salimkayabasi/slack-chat#readme",
   "dependencies": {
-    "request": "^2.81.0",
-    "request-promise-native": "^1.0.4"
+    "phin": "^2.2.3"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
