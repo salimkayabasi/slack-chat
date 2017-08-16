@@ -21,6 +21,7 @@ class SlackChat {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
+        compressed: true,
       });
       return JSON.parse(response.body);
     } catch (e) {
