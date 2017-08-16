@@ -26,10 +26,7 @@
     "url": "https://github.com/salimkayabasi/slack-chat/issues"
   },
   "homepage": "https://github.com/salimkayabasi/slack-chat#readme",
-  "dependencies": {
-    "request": "^2.81.0",
-    "request-promise-native": "^1.0.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
