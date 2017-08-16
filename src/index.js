@@ -19,7 +19,7 @@ class SlackChat {
         url: baseUrl + method,
         data,
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
       });
       return JSON.parse(response.body);
