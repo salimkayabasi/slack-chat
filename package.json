@@ -11,10 +11,10 @@
     "lint:fix": "eslint . --fix",
     "pretest": "yarn run lint",
     "test": "jest",
-    "clean": "rm -rf dist/",
-    "prebuild": "yarn run test",
+    "clean": "rm -rf dist/ build/ coverage/",
+    "prebuild": "yarn run lint && yarn run clean && yarn run test",
     "build": "babel src/ -d dist/",
-    "preversion": "yarn build && git commit -a --allow-empty -m 'update dist'"
+    "prepublish": "yarn run build"
   },
   "repository": {
     "type": "git",
