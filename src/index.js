@@ -3,8 +3,8 @@ import request from 'request-promise-native';
 const baseUrl = 'https://slack.com/api';
 
 class SlackChat {
-  constructor(options) {
-    this.options = options || {};
+  constructor(options = {}) {
+    this.options = options;
   }
 
   async makeRequest(method, options) {
