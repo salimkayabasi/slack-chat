@@ -14,7 +14,7 @@
     "clean": "rm -rf dist/ build/ coverage/",
     "prebuild": "yarn run lint && yarn run clean && yarn run test",
     "build": "babel src/ -d dist/",
-    "prepublish": "yarn run build"
+    "prepublishOnly": "yarn run build"
   },
   "repository": {
     "type": "git",
